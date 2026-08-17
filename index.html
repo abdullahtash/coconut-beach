@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كوكنت بيتش للعوائل | منتجع شاطئي خاص في درة العروس</title>
+<meta name="description" content="منتجع كوكنت بيتش للعوائل في درة العروس شمال جدة — شاطئ خاص، مسابح، شاليهات بإطلالة بحرية وخصوصية تامة. تقييم 4.8 على Google و9.6 على Booking. احجز عبر واتساب.">
+<meta name="theme-color" content="#0C1D1B">
+<meta property="og:title" content="كوكنت بيتش للعوائل — أفقٌ خاص لعائلتك">
+<meta property="og:description" content="ملاذ عائلي على شاطئ البحر الأحمر في درة العروس. شاطئ خاص، مسابح، وشاليهات بإطلالة بحرية.">
+<meta property="og:image" content="https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-0.jpg">
+<meta property="og:type" content="website">
+
+<!-- ============================================================
+  CoConut Beach للعوائل — luxury edition
+  Photos: the resort's own listing photos (booking-platform mirror).
+  Each photo sits over a gradient fallback, so the page still looks
+  intentional even if an image URL ever goes offline.
+  To swap in original high-res photos later: search "PHOTO" below.
+  ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ---------------- Tokens: Red Sea, after dark ---------------- */
+:root{
+  --night:#0C1D1B;
+  --deep:#123029;
+  --cream:#F5F0E6;
+  --sand:#E9DFCC;
+  --gold:#C6A15B;
+  --gold-2:#E2C286;
+  --mist:rgba(245,240,230,.74);
+  --mist-2:rgba(245,240,230,.55);
+  --ink-on-cream:#1B2E2B;
+  --sub-on-cream:#54655F;
+  --hair:rgba(198,161,91,.35);
+  --hair-cream:rgba(27,46,43,.16);
+  --wa:#1FAF63;
+  --serif:"Cormorant Garamond","Amiri",serif;
+  --sans:"IBM Plex Sans Arabic",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);font-weight:400;
+  background:var(--night);color:var(--cream);
+  line-height:1.9;overflow-x:hidden;
+}
+::selection{background:var(--gold);color:var(--night)}
+html.en .ar{display:none !important}
+html:not(.en) .en{display:none !important}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,92%);margin-inline:auto}
+
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:600;line-height:1.18}
+h2{font-size:clamp(2rem,4.6vw,3.2rem);letter-spacing:.01em}
+h2 em,h1 em{font-style:italic;color:var(--gold-2)}
+h1 em .ar,h2 em .ar{font-style:normal;font-family:"Amiri",serif}
+.eyebrow{
+  font-family:var(--sans);font-weight:600;font-size:.72rem;
+  letter-spacing:.38em;text-transform:uppercase;color:var(--gold);
+  display:block;margin-bottom:1.1rem;
+}
+html[dir="rtl"] .eyebrow{letter-spacing:.28em}
+.rule{width:56px;height:1px;background:var(--gold);position:relative;margin-block:1.3rem}
+.rule::after{content:"";position:absolute;inset-inline-end:-4px;top:-3px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.lead{color:var(--mist);font-weight:300;font-size:1.06rem;max-width:36rem}
+.on-cream .lead{color:var(--sub-on-cream)}
+
+/* ---------------- Buttons ---------------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  font-family:var(--sans);font-weight:600;font-size:.95rem;letter-spacing:.02em;
+  padding:.9rem 1.9rem;border-radius:2px;border:1px solid transparent;
+  cursor:pointer;transition:all .22s ease;white-space:nowrap;
+}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn svg{width:19px;height:19px;flex:0 0 auto}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#178f50;transform:translateY(-1px)}
+.btn-line{background:transparent;color:var(--cream);border-color:rgba(245,240,230,.5)}
+.btn-line:hover{border-color:var(--gold);color:var(--gold-2)}
+.on-cream .btn-line{color:var(--ink-on-cream);border-color:rgba(27,46,43,.4)}
+.on-cream .btn-line:hover{border-color:var(--gold);color:#8a6a2e}
+.btn-gold{background:var(--gold);color:var(--night)}
+.btn-gold:hover{background:var(--gold-2)}
+
+/* ---------------- Header ---------------- */
+header{
+  position:fixed;inset-inline:0;top:0;z-index:80;
+  transition:background .3s ease, box-shadow .3s ease;
+  border-bottom:1px solid transparent;
+}
+header.scrolled{background:rgba(12,29,27,.92);backdrop-filter:blur(12px);border-bottom-color:rgba(198,161,91,.2)}
+.nav{display:flex;align-items:center;gap:1.4rem;padding-block:1.1rem}
+.brand{line-height:1.15}
+.brand .name{font-family:var(--serif);font-weight:600;font-size:1.35rem;letter-spacing:.04em}
+.brand .name i{font-style:italic;color:var(--gold-2)}
+.brand small{display:block;font-size:.66rem;letter-spacing:.3em;color:var(--mist-2);text-transform:uppercase}
+.nav-links{display:flex;gap:1.8rem;margin-inline-start:auto;font-size:.88rem;font-weight:500}
+.nav-links a{color:var(--mist);position:relative;padding-block:.2rem}
+.nav-links a::after{content:"";position:absolute;bottom:0;inset-inline-start:0;width:0;height:1px;background:var(--gold);transition:width .25s ease}
+.nav-links a:hover{color:var(--cream)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.nav-links + .nav-cta{margin-inline-start:0}
+.lang-btn{
+  font-family:var(--sans);font-weight:600;font-size:.78rem;letter-spacing:.1em;
+  border:1px solid rgba(245,240,230,.45);border-radius:2px;background:transparent;
+  padding:.42rem .85rem;cursor:pointer;color:var(--cream);transition:all .2s ease;
+}
+.lang-btn:hover{border-color:var(--gold);color:var(--gold-2)}
+.nav .btn{padding:.55rem 1.3rem;font-size:.85rem}
+@media(max-width:900px){.nav-links{display:none}}
+
+/* ---------------- Hero ---------------- */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:flex-end;
+  /* PHOTO: hero — the resort's official cover photo */
+  background-image:
+    linear-gradient(to top, rgba(8,18,17,.92) 0%, rgba(8,18,17,.35) 45%, rgba(8,18,17,.5) 100%),
+    url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-0.jpg"),
+    linear-gradient(160deg,#16413B 0%, #0C1D1B 70%);
+  background-size:cover,cover,cover;
+  background-position:center,center,center;
+}
+.hero-inner{padding-block:9rem 4.5rem;max-width:46rem}
+.hero .rating-line{
+  display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.9rem;color:var(--mist);margin-bottom:1.6rem;font-weight:500;
+}
+.hero .rating-line b{color:var(--cream);font-family:var(--serif);font-size:1.15rem;font-weight:700}
+.star{color:var(--gold);width:16px;height:16px}
+.hero .rating-line .sep{opacity:.4}
+.hero h1{font-size:clamp(3rem,8vw,5.4rem);font-weight:500;margin-bottom:1.4rem}
+.hero .lead{margin-bottom:2.2rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:2.6rem}
+.hero-ctas .btn{padding:1rem 2.1rem}
+.scroll-cue{
+  position:absolute;bottom:2.2rem;inset-inline-end:4%;
+  display:flex;flex-direction:column;align-items:center;gap:.7rem;
+  font-size:.68rem;letter-spacing:.3em;color:var(--mist-2);text-transform:uppercase;
+}
+.scroll-cue::after{content:"";width:1px;height:56px;background:linear-gradient(var(--gold),transparent);animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.4;transform:scaleY(.7);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+@media(max-width:700px){.scroll-cue{display:none}.hero-inner{padding-top:7.5rem}}
+
+/* ---------------- Facts bar (real policies) ---------------- */
+.facts{background:var(--deep);border-block:1px solid var(--hair)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
+.fact{padding-block:1.6rem;border-inline-start:1px solid var(--hair)}
+.fact:first-child{border-inline-start:none}
+.fact b{display:block;font-family:var(--serif);font-size:1.55rem;font-weight:600;color:var(--gold-2)}
+.fact span{font-size:.78rem;color:var(--mist-2);letter-spacing:.05em}
+@media(max-width:760px){
+  .facts .wrap{grid-template-columns:1fr 1fr}
+  .fact:nth-child(3){border-inline-start:none}
+  .fact{border-top:1px solid var(--hair);padding-block:1.2rem}
+  .fact:nth-child(-n+2){border-top:none}
+}
+
+/* ---------------- Sections ---------------- */
+section{padding-block:6rem}
+@media(max-width:700px){section{padding-block:4.2rem}}
+.on-cream{background:var(--cream);color:var(--ink-on-cream)}
+
+/* ---------------- The stay (split) ---------------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+@media(max-width:900px){.split{grid-template-columns:1fr;gap:2.6rem}}
+.photo-frame{
+  position:relative;aspect-ratio:4/4.4;overflow:hidden;border-radius:2px;
+  background-size:cover;background-position:center;
+  box-shadow:0 30px 70px rgba(0,0,0,.45);
+}
+.photo-frame::before{content:"";position:absolute;inset:14px;border:1px solid rgba(245,240,230,.35);pointer-events:none}
+/* PHOTO: interior — the listing's deluxe apartment photo */
+.stay-photo{
+  background-image:
+    url("https://imgservice.clocktowerhotels.com/jpg/1280x720/AzRT8xsWDLcQL9frPSuXFfBPP68gnzkfmgGPsxCmnowuVp_VK83QtIkP7Bd-6IIMwiROqBnfn2bjrf0E6G3uzDOXGkeEApFCFggcrqs4O4vIgMvADrgovaJl5qGnbxHkfoAweO6_ju28pb0Be-h0NRuQHFv7NydDRGNzsKkEN06JcC99LzMmjDSE-drZ1uLr?property_id=BC-14550364&IgnoreDemoImage=true"),
+    linear-gradient(160deg,#1A4A42,#0C1D1B);
+}
+.stay-list{display:grid;gap:1rem;margin-top:1.8rem}
+.stay-list li{display:flex;gap:.9rem;align-items:flex-start;font-size:.98rem;color:var(--mist);font-weight:300;list-style:none}
+.stay-list li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);flex:0 0 auto;margin-top:.65rem}
+.stay-list li b{color:var(--cream);font-weight:500}
+
+/* ---------------- Amenities ---------------- */
+.amen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--hair-cream)}
+@media(max-width:980px){.amen-grid{grid-template-columns:repeat(2,1fr)}}
+.amen{
+  padding:2.1rem 1.7rem;border-inline-start:1px solid var(--hair-cream);border-top:1px solid var(--hair-cream);
+  transition:background .25s ease;
+}
+.amen:hover{background:rgba(198,161,91,.07)}
+.amen:nth-child(-n+4){border-top:none}
+.amen:nth-child(4n+1){border-inline-start:none}
+@media(max-width:980px){
+  .amen:nth-child(-n+4){border-top:1px solid var(--hair-cream)}
+  .amen:nth-child(-n+2){border-top:none}
+  .amen:nth-child(4n+1){border-inline-start:1px solid var(--hair-cream)}
+  .amen:nth-child(2n+1){border-inline-start:none}
+}
+.amen svg{width:30px;height:30px;color:var(--gold);margin-bottom:1.1rem}
+.amen b{font-family:var(--serif);font-weight:600;font-size:1.22rem;display:block;margin-bottom:.25rem}
+.amen small{font-size:.85rem;color:var(--sub-on-cream);font-weight:400}
+
+/* ---------------- Gallery mosaic ---------------- */
+.mosaic{
+  display:grid;gap:12px;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:280px 280px;
+}
+.mosaic a{
+  position:relative;overflow:hidden;border-radius:2px;display:block;
+  background-size:cover;background-position:center;
+  transition:box-shadow .3s ease;
+}
+.mosaic a::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,29,27,.35),transparent 45%);opacity:.7;transition:opacity .3s ease}
+.mosaic a:hover::after{opacity:.15}
+.mosaic a:hover{box-shadow:inset 0 0 0 1px var(--gold)}
+.mosaic .m1{grid-column:span 2;grid-row:span 2}
+@media(max-width:760px){
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:260px 180px 180px 180px}
+  .mosaic .m1{grid-column:span 2;grid-row:span 1}
+}
+/* PHOTO: gallery — six of the resort's listing photos */
+.mosaic .m1{background-image:url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-1.jpg"),linear-gradient(150deg,#1A4A42,#0C1D1B)}
+.mosaic .m2{background-image:url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-2.jpg"),linear-gradient(150deg,#14776A,#0C1D1B)}
+.mosaic .m3{background-image:url("https://imgservice.clocktowerhotels.com/jpg/1280x720/AzRT8xsWDLcQL9frPSuXFfBPP68gnzkfmgGPsxCmnowuVp_VK83QtIkP7Bd-6IIMwiROqBnfn2biqPkJ6G3uzMaxPLg0jetavFHnocDL7Ny8PVPX1Wn4ZMiF3Okb1NnxLT2U9uZ1raxiHIlEHxnmfFnv9jEBDQpptAzCnV9SwzI2UOJ3Td1_eU2xo2rCBkZ7?property_id=BC-14550364&IgnoreDemoImage=true"),linear-gradient(150deg,#C98F3F,#6E441F)}
+.mosaic .m4{background-image:url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-3.jpg"),linear-gradient(150deg,#2FA893,#0A4C45)}
+.mosaic .m5{background-image:url("https://imgservice.clocktowerhotels.com/jpg/1280x720/AzRT8xsWDLcQL9frPSuXFfBPP68gnzkfmgGPsxCmnowuVp_VK83QtIkP7Bd-6IIMwiROqBnfn2biqPgB6G3uzBeOopqjOkzq_dg1x658-aN_UsRSgTdW3TVTRNi0xf8zdWh9Il2FLee5KRSQTBHEsIKyOVTz8p1ErCMJmJ1X5RIK4mkZLs6mDn4LmXYl5_rL?property_id=BC-14550364&IgnoreDemoImage=true"),linear-gradient(150deg,#1A4A42,#123029)}
+.mosaic .m6{background-image:url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-4.jpg"),linear-gradient(150deg,#E4693F,#4A1E33)}
+.gal-note{margin-top:1.4rem;font-size:.85rem;color:var(--mist-2);font-weight:300}
+.gal-note a{color:var(--gold-2);border-bottom:1px solid var(--hair)}
+
+/* ---------------- Reviews ---------------- */
+.rev-top{display:grid;grid-template-columns:auto 1px 1fr;gap:3rem;align-items:center;margin-bottom:3.2rem}
+.rev-top .vline{width:1px;height:100%;background:var(--hair-cream)}
+@media(max-width:820px){.rev-top{grid-template-columns:1fr;gap:1.6rem}.rev-top .vline{display:none}}
+.rev-score .n{font-family:var(--serif);font-weight:600;font-size:5.4rem;line-height:1;color:var(--ink-on-cream)}
+.rev-score .stars{color:var(--gold);letter-spacing:3px;font-size:1.1rem;margin-block:.3rem}
+.rev-score p{font-size:.85rem;color:var(--sub-on-cream)}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1rem}
+.chip{
+  border:1px solid var(--hair-cream);border-radius:2px;padding:.45rem 1rem;
+  font-size:.85rem;font-weight:500;color:var(--ink-on-cream);
+  display:flex;align-items:center;gap:.5rem;
+}
+.chip b{color:#8a6a2e;font-family:var(--serif);font-size:1rem}
+.bk-line{font-size:.92rem;color:var(--sub-on-cream)}
+.bk-line b{font-family:var(--serif);font-size:1.5rem;color:var(--ink-on-cream)}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+@media(max-width:820px){.quotes{grid-template-columns:1fr}}
+blockquote{
+  border:1px solid var(--hair-cream);border-top:2px solid var(--gold);
+  padding:2rem 1.8rem 1.6rem;background:#fff;border-radius:2px;
+}
+blockquote p{font-family:var(--serif);font-size:1.35rem;font-weight:500;line-height:1.6;font-style:italic}
+blockquote p .ar{font-style:normal;font-family:"Amiri",serif}
+blockquote footer{margin-top:1rem;font-size:.8rem;color:var(--sub-on-cream);letter-spacing:.05em}
+.rev-links{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.4rem}
+
+/* ---------------- Booking steps ---------------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-block:1px solid var(--hair);counter-reset:s}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.step{padding:2.6rem 2.2rem;border-inline-start:1px solid var(--hair)}
+.step:first-child{border-inline-start:none}
+@media(max-width:820px){.step{border-inline-start:none;border-top:1px solid var(--hair)}.step:first-child{border-top:none}}
+.step::before{
+  counter-increment:s;content:"0" counter(s);
+  font-family:var(--serif);font-style:italic;font-size:2.2rem;color:var(--gold);
+  display:block;margin-bottom:1rem;line-height:1;
+}
+.step h3{font-size:1.4rem;font-weight:600;margin-bottom:.5rem}
+.step p{font-size:.95rem;color:var(--mist);font-weight:300}
+.book-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.1rem;margin-top:2.8rem}
+.book-cta span{font-size:.88rem;color:var(--mist-2)}
+
+/* ---------------- Location ---------------- */
+.loc-photo{
+  /* PHOTO: location — resort surroundings */
+  background-image:
+    linear-gradient(to top,rgba(12,29,27,.55),rgba(12,29,27,.05) 60%),
+    url("https://imgservice.clocktowerhotels.com/jpg/1280x720/AzRT8xsWDLcQL9frPSuXFfBPP68gnzkfmgGPsxCmnowuVp_VK83QtIkP7Bd-6IIMwiROqBnfn2biqPgC6G3uzEv6-xSPrYN-iUVG3MgXikEMKVvrown5tyu6NT-rNOMDzTbUyUo195W-a95M0BPd9cQ3EysMdhHs88qSxlxyEN-5SpnPbQhUn37h0tQqgOHG?property_id=BC-14550364&IgnoreDemoImage=true"),
+    linear-gradient(160deg,#14776A,#0C1D1B);
+  background-size:cover;background-position:center;
+}
+.loc-tag{
+  position:absolute;bottom:1.4rem;inset-inline-start:1.4rem;
+  background:rgba(12,29,27,.85);border:1px solid var(--hair);
+  padding:.55rem 1.1rem;font-size:.8rem;letter-spacing:.08em;color:var(--gold-2);
+}
+.loc-list{display:grid;gap:1.1rem;margin-block:1.8rem}
+.loc-list li{display:flex;gap:1rem;align-items:flex-start;list-style:none;font-size:.98rem;color:var(--sub-on-cream)}
+.loc-list li b{color:var(--ink-on-cream);font-weight:600}
+.loc-list svg{width:20px;height:20px;color:var(--gold);flex:0 0 auto;margin-top:.35rem}
+.loc-btns{display:flex;flex-wrap:wrap;gap:.9rem}
+
+/* ---------------- Final CTA ---------------- */
+.final{
+  position:relative;text-align:center;padding-block:8rem;
+  background-image:
+    linear-gradient(rgba(8,18,17,.82),rgba(8,18,17,.82)),
+    url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-0.jpg"),
+    linear-gradient(160deg,#123029,#0C1D1B);
+  background-size:cover;background-position:center;background-attachment:fixed;
+}
+@media(max-width:900px){.final{background-attachment:scroll}}
+.final h2{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:500;margin-bottom:1rem}
+.final .lead{margin:0 auto 2.4rem}
+.final .btn-wa{padding:1.05rem 2.6rem;font-size:1rem}
+.final .call-line{margin-top:1.6rem;font-size:.95rem;color:var(--mist)}
+.final .call-line a{font-family:var(--serif);font-size:1.25rem;color:var(--gold-2);letter-spacing:.05em}
+
+/* ---------------- Footer ---------------- */
+footer.site{border-top:1px solid var(--hair);padding-block:2.6rem;font-size:.85rem;color:var(--mist-2)}
+footer.site .wrap{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:space-between;align-items:center}
+footer.site .f-brand{font-family:var(--serif);font-size:1.15rem;color:var(--cream)}
+footer.site nav{display:flex;gap:1.6rem;flex-wrap:wrap}
+footer.site a:hover{color:var(--gold-2)}
+footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
+
+/* ---------------- FAB + mobile bar ---------------- */
+.fab{
+  position:fixed;bottom:1.6rem;inset-inline-start:1.6rem;z-index:70;
+  width:58px;height:58px;border-radius:50%;background:var(--wa);
+  display:grid;place-items:center;color:#fff;
+  box-shadow:0 12px 30px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.15);
+  transition:transform .2s ease;
+}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:28px;height:28px}
+.mobile-bar{display:none}
+@media(max-width:760px){
+  .fab{display:none}
+  .mobile-bar{
+    display:grid;grid-template-columns:1fr 1fr;gap:.6rem;
+    position:fixed;bottom:0;inset-inline:0;z-index:70;
+    background:rgba(12,29,27,.96);backdrop-filter:blur(12px);
+    border-top:1px solid var(--hair);
+    padding:.65rem .8rem calc(.65rem + env(safe-area-inset-bottom));
+  }
+  .mobile-bar .btn{width:100%;padding:.8rem;font-size:.9rem}
+  body{padding-bottom:76px}
+}
+
+/* ---------------- Reveal ---------------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  .final{background-attachment:scroll}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Resort",
+  "name":"CoConut Beach للعوائل",
+  "alternateName":"كوكنت بيتش للعائلات",
+  "image":"https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-0.jpg",
+  "telephone":"+966530088622",
+  "checkinTime":"16:00","checkoutTime":"12:00",
+  "petsAllowed":false,
+  "address":{"@type":"PostalAddress","addressLocality":"Durrat Al-Arous","addressRegion":"Makkah Province","postalCode":"23851","addressCountry":"SA"},
+  "sameAs":["https://www.booking.com/hotel/sa/kwknt-bytsh-coconut-beach.html"],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"198"},
+  "amenityFeature":[
+    {"@type":"LocationFeatureSpecification","name":"Private beachfront"},
+    {"@type":"LocationFeatureSpecification","name":"Outdoor pool with view"},
+    {"@type":"LocationFeatureSpecification","name":"Kids' pool"},
+    {"@type":"LocationFeatureSpecification","name":"Hot tub"},
+    {"@type":"LocationFeatureSpecification","name":"Free WiFi"},
+    {"@type":"LocationFeatureSpecification","name":"Free private parking"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="name"><span class="ar">كوكنت <i>بيتش</i></span><span class="en">CoConut <i>Beach</i></span></span>
+      <small><span class="ar">للعوائل · درة العروس</span><span class="en">Families only · Durrat Al-Arous</span></small>
+    </a>
+    <nav class="nav-links" aria-label="sections">
+      <a href="#stay"><span class="ar">الإقامة</span><span class="en">The stay</span></a>
+      <a href="#amenities"><span class="ar">المرافق</span><span class="en">Amenities</span></a>
+      <a href="#gallery"><span class="ar">المعرض</span><span class="en">Gallery</span></a>
+      <a href="#reviews"><span class="ar">التقييمات</span><span class="en">Reviews</span></a>
+      <a href="#location"><span class="ar">الموقع</span><span class="en">Location</span></a>
+    </nav>
+    <div class="nav-cta">
+      <button class="lang-btn" id="langToggle" aria-label="Switch language">
+        <span class="ar">EN</span><span class="en">عربي</span>
+      </button>
+      <a class="btn btn-gold wa-link" href="https://wa.me/966530088622">
+        <span class="ar">احجز الآن</span><span class="en">Book now</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="wrap hero-inner">
+    <div class="rating-line">
+      <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7.1L12 17.3 5.8 21l1.6-7.1L2 9.2l7.1-.6z"/></svg>
+      <b>4.8</b>
+      <span class="ar">من +198 تقييم على خرائط Google</span><span class="en">from 198+ Google reviews</span>
+      <span class="sep">·</span>
+      <b>9.6</b>
+      <span class="ar">/10 على Booking.com</span><span class="en">/10 on Booking.com</span>
+    </div>
+    <span class="eyebrow"><span class="ar">درة العروس &nbsp;·&nbsp; البحر الأحمر</span><span class="en">Durrat Al-Arous &nbsp;·&nbsp; Red Sea</span></span>
+    <h1>
+      <span class="ar">أفقٌ خاص<br><em><span class="ar">لعائلتك.</span></em></span>
+      <span class="en">Your family's<br><em>private horizon.</em></span>
+    </h1>
+    <p class="lead">
+      <span class="ar">ملاذ هادئ على الواجهة البحرية، حيث تلتقي المسابح، والشاليهات المطلّة على البحر، وسكينة البحر الأحمر — بخصوصية تامة للعوائل.</span>
+      <span class="en">A pristine beachfront sanctuary where private pools, sea-view chalets, and the calm of the Red Sea come together — families only.</span>
+    </p>
+    <div class="hero-ctas">
+      <a class="btn btn-wa wa-link" href="https://wa.me/966530088622">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-5.7-5c-.8-1.3-1.3-2.7-.9-3.5.2-.5.8-1.4 1.4-1.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.6 1 1.7 2.1 3 2.7.3.2.5.1.7-.1l.6-.7c.2-.2.4-.3.6-.2l2 1c.3.1.5.2.5.4 0 .1 0 .7-.3 1.3Z"/></svg>
+        <span class="ar">استفسر واحجز عبر واتساب</span><span class="en">Enquire &amp; book on WhatsApp</span>
+      </a>
+      <a class="btn btn-line" href="tel:+966530088622">
+        <span class="ar">اتصال&nbsp;&nbsp;8622 008 053</span><span class="en">Call&nbsp;&nbsp;053 008 8622</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="ar">اكتشف</span><span class="en">Explore</span></div>
+</section>
+
+<!-- ================= FACTS ================= -->
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b>4:00<span style="font-size:.8rem"> م</span></b><span class="ar">تسجيل الوصول</span><span class="en">Check-in from 4 PM</span></div>
+    <div class="fact"><b>12:00<span style="font-size:.8rem"> م</span></b><span class="ar">المغادرة حتى الظهر</span><span class="en">Check-out by noon</span></div>
+    <div class="fact"><b class="serif"><span class="ar">مجاني</span><span class="en">Free</span></b><span class="ar">إلغاء الحجز*</span><span class="en">Cancellation*</span></div>
+    <div class="fact"><b class="serif"><span class="ar">للعوائل</span><span class="en">Families</span></b><span class="ar">فقط، بخصوصية تامة</span><span class="en">Only — full privacy</span></div>
+  </div>
+</div>
+
+<!-- ================= THE STAY ================= -->
+<section id="stay">
+  <div class="wrap split">
+    <div class="photo-frame stay-photo reveal" role="img" aria-label="شاليه كوكنت بيتش من الداخل"></div>
+    <div class="reveal">
+      <span class="eyebrow"><span class="ar">الإقامة</span><span class="en">The stay</span></span>
+      <h2><span class="ar">شاليهات صُمّمت <em><span class="ar">للسكينة</span></em></span><span class="en">Chalets designed <em>for stillness</em></span></h2>
+      <div class="rule"></div>
+      <p class="lead">
+        <span class="ar">مساحات عائلية واسعة تطلّ على البحر أو المسبح، مكيّفة بالكامل، مع كل ما يجعل إقامتكم بلا عناء.</span>
+        <span class="en">Generous family spaces overlooking the sea or pool, fully air-conditioned, with everything that makes a stay effortless.</span>
+      </p>
+      <ul class="stay-list">
+        <li><span><b class="ar">إطلالات بحرية وتراسات خاصة</b><b class="en">Sea views &amp; private terraces</b> <span class="ar">— جلساتكم الخارجية على بُعد خطوة من الموج.</span><span class="en">— your outdoor seating a step from the water.</span></span></li>
+        <li><span><b class="ar">مطبخ مجهز بالكامل</b><b class="en">Fully equipped kitchenette</b> <span class="ar">— ثلاجة، مايكرويف، وآلة قهوة لصباحاتكم.</span><span class="en">— fridge, microwave, and a coffee machine for slow mornings.</span></span></li>
+        <li><span><b class="ar">جاكوزي وتدفئة للمسبح</b><b class="en">Hot tub &amp; heated pool</b> <span class="ar">— دفء الماء في كل مواسم السنة.</span><span class="en">— warm water in every season.</span></span></li>
+        <li><span><b class="ar">تنظيف يومي واستقبال خاص</b><b class="en">Daily housekeeping &amp; private check-in</b> <span class="ar">— نظافة يثني عليها الزوار في تقييماتهم.</span><span class="en">— the cleanliness guests keep praising in reviews.</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AMENITIES ================= -->
+<section id="amenities" class="on-cream">
+  <div class="wrap">
+    <div class="reveal" style="max-width:40rem;margin-bottom:3rem">
+      <span class="eyebrow"><span class="ar">المرافق</span><span class="en">Amenities</span></span>
+      <h2><span class="ar">كل تفاصيل <em><span class="ar">الراحة</span></em></span><span class="en">Every detail of <em>comfort</em></span></h2>
+      <div class="rule"></div>
+      <p class="lead"><span class="ar">المرافق كما هي موثّقة في قائمة المنتجع على منصات الحجز.</span><span class="en">Facilities as documented on the resort's booking listings.</span></p>
+    </div>
+    <div class="amen-grid reveal">
+      <div class="amen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2 19c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/><path d="M6 15c4-8 10-8 16-6-4 0-8 1-11 6"/></svg><b><span class="ar">شاطئ خاص</span><span class="en">Private beach</span></b><small><span class="ar">واجهة بحرية مباشرة ومظلات وكراسي استلقاء</span><span class="en">Direct beachfront, umbrellas &amp; loungers</span></small></div>
+      <div class="amen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2 17c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/><path d="M8 13V6a2 2 0 0 1 4 0"/><path d="M14 13V6a2 2 0 0 1 4 0"/><path d="M8 9h6"/></svg><b><span class="ar">مسبح بإطلالة</span><span class="en">Pool with a view</span></b><small><span class="ar">خارجي، مُدفأ، على مدار السنة</span><span class="en">Outdoor, heated, year-round</span></small></div>
+      <div class="amen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="7"/><path d="M12 5c2 2 2 12 0 14M5 12h14M6.5 8.5c3 1.5 8 1.5 11 0M6.5 15.5c3-1.5 8-1.5 11 0"/></svg><b><span class="ar">مسبح أطفال وألعاب مائية</span><span class="en">Kids' pool &amp; waterpark</span></b><small><span class="ar">مع منطقة لعب خارجية وبوابات أمان</span><span class="en">Outdoor play area &amp; safety gates</span></small></div>
+      <div class="amen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="13" r="6"/><path d="M9.5 12c.8 1 4.2 1 5 0M8 4c.5 1 .5 2 0 3M12 3c.5 1 .5 2 0 3M16 4c.5 1 .5 2 0 3"/></svg><b><span class="ar">جاكوزي</span><span class="en">Hot tub</span></b><small><span class="ar">استرخاء دافئ بعد يوم على الشاطئ</span><span class="en">A warm unwind after the beach</span></small></div>
+      <div class="amen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-5h4v5"/></svg><b><span class="ar">جلسات وسطح شمسي</span><span class="en">Sun deck &amp; seating</span></b><small><span class="ar">أثاث خارجي وحديقة ومنطقة نزهة</span><span class="en">Outdoor furniture, garden &amp; picnic area</span></small></div>
+      <div class="amen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M3 9c5.5-5 12.5-5 18 0M6 12.5c4-3.5 8-3.5 12 0M9 16c2-1.8 4-1.8 6 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg><b><span class="ar">واي فاي مجاني</span><span class="en">Free WiFi</span></b><small><span class="ar">في جميع أرجاء المنتجع</span><span class="en">Throughout the resort</span></small></div>
+      <div class="amen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l2-6h10l2 6"/><rect x="4" y="13" width="16" height="5" rx="1"/><circle cx="8" cy="18.5" r="1.5"/><circle cx="16" cy="18.5" r="1.5"/></svg><b><span class="ar">مواقف خاصة مجانية</span><span class="en">Free private parking</span></b><small><span class="ar">داخل المنتجع، مع أمن وكاميرات 24 ساعة</span><span class="en">On site, with 24-hour security &amp; CCTV</span></small></div>
+      <div class="amen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 19h16"/><path d="M6 19a6 6 0 0 1 12 0"/><path d="M12 13V9"/><path d="M10 5h4"/></svg><b><span class="ar">خدمة على مدار الساعة</span><span class="en">Round-the-clock service</span></b><small><span class="ar">استقبال 24س، خدمة غرف، وتنظيف يومي</span><span class="en">24h front desk, room service, daily housekeeping</span></small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="reveal" style="max-width:40rem;margin-bottom:3rem">
+      <span class="eyebrow"><span class="ar">المعرض</span><span class="en">Gallery</span></span>
+      <h2><span class="ar">لمحات من <em><span class="ar">المكان</span></em></span><span class="en">Glimpses of <em>the place</em></span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="mosaic reveal" aria-label="صور المنتجع">
+      <a class="m1" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
+      <a class="m2" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
+      <a class="m3" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
+      <a class="m4" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
+      <a class="m5" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
+      <a class="m6" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
+    </div>
+    <p class="gal-note">
+      <span class="ar">المزيد من صور الزوار على <a href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener">خرائط Google</a>.</span>
+      <span class="en">More guest photos on <a href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener">Google Maps</a>.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section id="reviews" class="on-cream">
+  <div class="wrap">
+    <div class="reveal" style="max-width:40rem;margin-bottom:3rem">
+      <span class="eyebrow"><span class="ar">التقييمات</span><span class="en">Reviews</span></span>
+      <h2><span class="ar">بكلمات <em><span class="ar">ضيوفنا</span></em></span><span class="en">In our <em>guests' words</em></span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="rev-top reveal">
+      <div class="rev-score">
+        <div class="n">4.8</div>
+        <div class="stars">★★★★★</div>
+        <p><span class="ar">من 5 · +198 تقييم على خرائط Google</span><span class="en">out of 5 · 198+ Google Maps reviews</span></p>
+      </div>
+      <div class="vline"></div>
+      <div>
+        <div class="chips">
+          <span class="chip"><span class="ar">المسبح</span><span class="en">The pool</span> <b>×10</b></span>
+          <span class="chip"><span class="ar">رقي التعامل</span><span class="en">Gracious service</span> <b>×9</b></span>
+          <span class="chip"><span class="ar">نظافة الشاليه</span><span class="en">Chalet cleanliness</span> <b>×8</b></span>
+          <span class="chip"><span class="ar">إطلالة البحر</span><span class="en">The sea view</span></span>
+        </div>
+        <p class="bk-line"><b>9.6</b> <span class="ar">/10 تقييم النزلاء على Booking.com</span><span class="en">/10 guest score on Booking.com</span></p>
+      </div>
+    </div>
+    <div class="quotes">
+      <blockquote class="reveal">
+        <p><span class="ar">«المكان حلو ومرتب، وتعامل الإدارة والمشرف مرة راقي وممتاز.»</span><span class="en">"A lovely, tidy place — the management and supervisor were wonderfully gracious."</span></p>
+        <footer><span class="ar">رفيف · خرائط Google</span><span class="en">Rafeef · Google Maps</span></footer>
+      </blockquote>
+      <blockquote class="reveal">
+        <p><span class="ar">«المكان جديد ونظيف ومرتب ما شاء الله، وعائلي.»</span><span class="en">"The place is new, clean, tidy, and truly family-friendly."</span></p>
+        <footer><span class="ar">ابتهاج · Booking.com</span><span class="en">Ebtehaj · Booking.com</span></footer>
+      </blockquote>
+    </div>
+    <div class="rev-links reveal">
+      <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener"><span class="ar">اقرأ التقييمات على Google</span><span class="en">Read reviews on Google</span></a>
+      <a class="btn btn-line" href="https://www.booking.com/hotel/sa/kwknt-bytsh-coconut-beach.html" target="_blank" rel="noopener"><span class="ar">صفحتنا على Booking.com</span><span class="en">Our Booking.com page</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<section id="book">
+  <div class="wrap">
+    <div class="reveal" style="max-width:40rem;margin-bottom:3rem">
+      <span class="eyebrow"><span class="ar">الحجز</span><span class="en">Booking</span></span>
+      <h2><span class="ar">إجازتكم تبدأ <em><span class="ar">برسالة</span></em></span><span class="en">Your escape starts <em>with a message</em></span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <h3><span class="ar">راسلنا واتساب</span><span class="en">Message us on WhatsApp</span></h3>
+        <p><span class="ar">أرسلوا التاريخ المطلوب وعدد الأفراد، ونوافيكم بالمتاح فورًا.</span><span class="en">Send your dates and group size — we reply promptly with availability.</span></p>
+      </div>
+      <div class="step">
+        <h3><span class="ar">اختاروا شاليهكم</span><span class="en">Choose your chalet</span></h3>
+        <p><span class="ar">نرسل الخيارات والأسعار والصور لتختاروا الأنسب لعائلتكم.</span><span class="en">We send options, rates, and photos so you pick what suits your family.</span></p>
+      </div>
+      <div class="step">
+        <h3><span class="ar">أكّدوا واستعدّوا</span><span class="en">Confirm &amp; arrive</span></h3>
+        <p><span class="ar">نثبّت الحجز ونرسل تفاصيل الوصول — والباقي علينا.</span><span class="en">We confirm the booking and send arrival details — the rest is on us.</span></p>
+      </div>
+    </div>
+    <div class="book-cta reveal">
+      <a class="btn btn-wa wa-link" href="https://wa.me/966530088622">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-5.7-5c-.8-1.3-1.3-2.7-.9-3.5.2-.5.8-1.4 1.4-1.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.6 1 1.7 2.1 3 2.7.3.2.5.1.7-.1l.6-.7c.2-.2.4-.3.6-.2l2 1c.3.1.5.2.5.4 0 .1 0 .7-.3 1.3Z"/></svg>
+        <span class="ar">ابدأوا الحجز الآن</span><span class="en">Start booking now</span>
+      </a>
+      <span><span class="ar">أو مباشرة عبر</span><span class="en">or directly via</span></span>
+      <a class="btn btn-line" href="https://www.booking.com/hotel/sa/kwknt-bytsh-coconut-beach.html" target="_blank" rel="noopener">Booking.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCATION ================= -->
+<section id="location" class="on-cream">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow"><span class="ar">الموقع</span><span class="en">Location</span></span>
+      <h2><span class="ar">قريب من جدة، <em><span class="ar">بعيد عن ضجيجها</span></em></span><span class="en">Close to Jeddah, <em>far from its noise</em></span></h2>
+      <div class="rule"></div>
+      <ul class="loc-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <span><b class="ar">درة العروس 23851</b><b class="en">Durrat Al-Arous 23851</b> <span class="ar">— على ساحل البحر الأحمر شمال مدينة جدة.</span><span class="en">— on the Red Sea coast, north of Jeddah.</span></span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 15l7-2 4-8 2 7 5 3-9 1z"/><path d="M3 21h18"/></svg>
+          <span><span class="ar">حوالي <b>56 كم</b> من مطار الملك عبدالعزيز الدولي.</span><span class="en">Around <b>35 miles</b> from King Abdulaziz International Airport.</span></span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+          <span dir="ltr"><b>053 008 8622</b></span>
+        </li>
+      </ul>
+      <div class="loc-btns">
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener"><span class="ar">الاتجاهات في خرائط Google</span><span class="en">Directions on Google Maps</span></a>
+        <a class="btn btn-wa wa-link" href="https://wa.me/966530088622"><span class="ar">اسألونا عن الموقع</span><span class="en">Ask us anything</span></a>
+      </div>
+    </div>
+    <div class="photo-frame loc-photo reveal">
+      <div class="loc-tag"><span class="ar">درة العروس · جدة</span><span class="en">Durrat Al-Arous · Jeddah</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final">
+  <div class="wrap reveal">
+    <span class="eyebrow"><span class="ar">كوكنت بيتش للعوائل</span><span class="en">CoConut Beach — Families only</span></span>
+    <h2><span class="ar">موعد عائلتك <em><span class="ar">مع البحر.</span></em></span><span class="en">Your family's <em>date with the sea.</em></span></h2>
+    <p class="lead"><span class="ar">أرسلوا تاريخكم الآن — الردّ سريع، والمواعيد المميزة تُحجز مبكرًا.</span><span class="en">Send your dates now — replies are quick, and the best dates go early.</span></p>
+    <a class="btn btn-wa wa-link" href="https://wa.me/966530088622">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-5.7-5c-.8-1.3-1.3-2.7-.9-3.5.2-.5.8-1.4 1.4-1.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.6 1 1.7 2.1 3 2.7.3.2.5.1.7-.1l.6-.7c.2-.2.4-.3.6-.2l2 1c.3.1.5.2.5.4 0 .1 0 .7-.3 1.3Z"/></svg>
+      <span class="ar">احجزوا عبر واتساب</span><span class="en">Book on WhatsApp</span>
+    </a>
+    <div class="call-line"><span class="ar">أو اتصلوا · </span><span class="en">or call · </span><a href="tel:+966530088622" dir="ltr">053 008 8622</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span class="f-brand"><span class="ar">كوكنت بيتش <i style="color:var(--gold-2)">للعوائل</i></span><span class="en">CoConut <i style="color:var(--gold-2)">Beach</i></span></span>
+    <nav>
+      <a href="tel:+966530088622" dir="ltr">053 008 8622</a>
+      <a href="https://www.booking.com/hotel/sa/kwknt-bytsh-coconut-beach.html" target="_blank" rel="noopener">Booking.com</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener"><span class="ar">خرائط Google</span><span class="en">Google Maps</span></a>
+    </nav>
+    <span class="note">
+      <span class="ar">© 2026 كوكنت بيتش للعوائل — درة العروس، جدة. *الإلغاء المجاني وفق سياسة الحجز المعلنة. الصور من قوائم المنتجع على منصات الحجز.</span>
+      <span class="en">© 2026 CoConut Beach For Families — Durrat Al-Arous, Jeddah. *Free cancellation per the published booking policy. Photos from the resort's booking-platform listings.</span>
+    </span>
+  </div>
+</footer>
+
+<a class="fab wa-link" href="https://wa.me/966530088622" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-5.7-5c-.8-1.3-1.3-2.7-.9-3.5.2-.5.8-1.4 1.4-1.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.6 1 1.7 2.1 3 2.7.3.2.5.1.7-.1l.6-.7c.2-.2.4-.3.6-.2l2 1c.3.1.5.2.5.4 0 .1 0 .7-.3 1.3Z"/></svg>
+</a>
+
+<div class="mobile-bar">
+  <a class="btn btn-line" href="tel:+966530088622"><span class="ar">اتصال</span><span class="en">Call</span></a>
+  <a class="btn btn-wa wa-link" href="https://wa.me/966530088622">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-5.7-5c-.8-1.3-1.3-2.7-.9-3.5.2-.5.8-1.4 1.4-1.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.6 1 1.7 2.1 3 2.7.3.2.5.1.7-.1l.6-.7c.2-.2.4-.3.6-.2l2 1c.3.1.5.2.5.4 0 .1 0 .7-.3 1.3Z"/></svg>
+    <span class="ar">واتساب</span><span class="en">WhatsApp</span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var msgs = {
+    ar: "مرحباً، أرغب بالاستفسار عن حجز شاليه في كوكنت بيتش 🌴",
+    en: "Hello, I'd like to ask about booking a chalet at CoConut Beach 🌴"
+  };
+  function setWaText(){
+    var lang = document.documentElement.classList.contains('en') ? 'en' : 'ar';
+    var links = document.querySelectorAll('.wa-link');
+    for(var i=0;i<links.length;i++){
+      links[i].href = "https://wa.me/966530088622?text=" + encodeURIComponent(msgs[lang]);
+    }
+  }
+  setWaText();
+
+  var btn = document.getElementById('langToggle');
+  if(btn){
+    btn.addEventListener('click', function(){
+      var root = document.documentElement;
+      var toEn = !root.classList.contains('en');
+      root.classList.toggle('en', toEn);
+      root.setAttribute('lang', toEn ? 'en' : 'ar');
+      root.setAttribute('dir', toEn ? 'ltr' : 'rtl');
+      setWaText();
+    });
+  }
+
+  var hdr = document.getElementById('hdr');
+  function onScroll(){ hdr.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
