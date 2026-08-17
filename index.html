@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0C1D1B">
 <meta property="og:title" content="كوكنت بيتش للعوائل — أفقٌ خاص لعائلتك">
 <meta property="og:description" content="ملاذ عائلي على شاطئ البحر الأحمر في درة العروس. شاطئ خاص، مسابح، وشاليهات بإطلالة بحرية.">
-<meta property="og:image" content="https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-0.jpg">
+<meta property="og:image" content="https://images.pexels.com/photos/12858509/pexels-photo-12858509.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200">
 <meta property="og:type" content="website">
 
 <!-- ============================================================
@@ -120,15 +120,35 @@ header.scrolled{background:rgba(12,29,27,.92);backdrop-filter:blur(12px);border-
 /* ---------------- Hero ---------------- */
 .hero{
   position:relative;min-height:100svh;display:flex;align-items:flex-end;
-  /* PHOTO: hero — the resort's official cover photo */
-  background-image:
-    linear-gradient(to top, rgba(8,18,17,.92) 0%, rgba(8,18,17,.35) 45%, rgba(8,18,17,.5) 100%),
-    url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-0.jpg"),
-    linear-gradient(160deg,#16413B 0%, #0C1D1B 70%);
-  background-size:cover,cover,cover;
-  background-position:center,center,center;
+  overflow:hidden;
+  background:linear-gradient(160deg,#16413B 0%, #0C1D1B 70%);
 }
-.hero-inner{padding-block:9rem 4.5rem;max-width:46rem}
+/* PHOTO: hero — professional stand-in shot (Pexels, free license, commercial
+   use allowed). Swap for the owner's original hero photo before launch.
+   The resort's real listing photos remain in the gallery + stay sections. */
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    url("https://images.pexels.com/photos/12858509/pexels-photo-12858509.jpeg?auto=compress&cs=tinysrgb&w=1920");
+  background-size:cover;background-position:center 55%;
+  transform:scale(1.06);
+  animation:heroZoom 26s ease-out forwards;
+  will-change:transform;
+}
+@keyframes heroZoom{to{transform:scale(1.15)}}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(120% 95% at 50% 28%, transparent 38%, rgba(8,18,17,.62) 100%),
+    linear-gradient(to top, rgba(8,18,17,.95) 0%, rgba(8,18,17,.4) 44%, rgba(8,18,17,.55) 100%);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  opacity:.09;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  background-size:140px 140px;
+}
+.hero-inner{position:relative;z-index:2;padding-block:9rem 4.5rem;max-width:46rem}
 .hero .rating-line{
   display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
   font-size:.9rem;color:var(--mist);margin-bottom:1.6rem;font-weight:500;
@@ -141,7 +161,7 @@ header.scrolled{background:rgba(12,29,27,.92);backdrop-filter:blur(12px);border-
 .hero-ctas{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:2.6rem}
 .hero-ctas .btn{padding:1rem 2.1rem}
 .scroll-cue{
-  position:absolute;bottom:2.2rem;inset-inline-end:4%;
+  position:absolute;bottom:2.2rem;inset-inline-end:4%;z-index:2;
   display:flex;flex-direction:column;align-items:center;gap:.7rem;
   font-size:.68rem;letter-spacing:.3em;color:var(--mist-2);text-transform:uppercase;
 }
@@ -304,8 +324,8 @@ blockquote footer{margin-top:1rem;font-size:.8rem;color:var(--sub-on-cream);lett
 .final{
   position:relative;text-align:center;padding-block:8rem;
   background-image:
-    linear-gradient(rgba(8,18,17,.82),rgba(8,18,17,.82)),
-    url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-0.jpg"),
+    linear-gradient(rgba(8,18,17,.84),rgba(8,18,17,.84)),
+    url("https://images.pexels.com/photos/1449767/pexels-photo-1449767.jpeg?auto=compress&cs=tinysrgb&w=1920"),
     linear-gradient(160deg,#123029,#0C1D1B);
   background-size:cover;background-position:center;background-attachment:fixed;
 }
@@ -413,6 +433,7 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     <div class="rating-line">
       <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7.1L12 17.3 5.8 21l1.6-7.1L2 9.2l7.1-.6z"/></svg>
@@ -653,8 +674,8 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
       <a href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener"><span class="ar">خرائط Google</span><span class="en">Google Maps</span></a>
     </nav>
     <span class="note">
-      <span class="ar">© 2026 كوكنت بيتش للعوائل — درة العروس، جدة. *الإلغاء المجاني وفق سياسة الحجز المعلنة. الصور من قوائم المنتجع على منصات الحجز.</span>
-      <span class="en">© 2026 CoConut Beach For Families — Durrat Al-Arous, Jeddah. *Free cancellation per the published booking policy. Photos from the resort's booking-platform listings.</span>
+      <span class="ar">© 2026 كوكنت بيتش للعوائل — درة العروس، جدة. *الإلغاء المجاني وفق سياسة الحجز المعلنة. صور المعرض من قوائم المنتجع على منصات الحجز؛ صورتا الغلاف مؤقتتان لحين اعتماد الصور الأصلية.</span>
+      <span class="en">© 2026 CoConut Beach For Families — Durrat Al-Arous, Jeddah. *Free cancellation per the published booking policy. Gallery photos from the resort's booking listings; the two cover images are temporary pending the resort's originals.</span>
     </span>
   </div>
 </footer>
