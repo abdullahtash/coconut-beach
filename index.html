@@ -6,10 +6,23 @@
 <title>كوكنت بيتش للعوائل | منتجع شاطئي خاص في درة العروس</title>
 <meta name="description" content="منتجع كوكنت بيتش للعوائل في درة العروس شمال جدة — شاطئ خاص، مسابح، شاليهات بإطلالة بحرية وخصوصية تامة. تقييم 4.8 على Google و9.6 على Booking. احجز عبر واتساب.">
 <meta name="theme-color" content="#0C1D1B">
+<!-- Trailing slash is required: the slashless form 301s to this one. -->
+<link rel="canonical" href="https://abdullahtash.github.io/coconut-beach/">
+
+<!-- The hero is a CSS background, so it isn't discoverable until the stylesheet
+     has parsed. Preloading the LCP image here pulls that request forward.
+     The href must stay byte-identical to the url() in .hero-bg or it won't dedupe. -->
+<link rel="preload" as="image" fetchpriority="high" href="https://images.pexels.com/photos/12858509/pexels-photo-12858509.jpeg?auto=compress&cs=tinysrgb&w=1920">
+
+<!-- Inline SVG mark, so there's no extra request and no /favicon.ico 404. -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230C1D1B'/><path d='M22.4 9.6A9 9 0 1 0 22.4 22.4' fill='none' stroke='%23C6A15B' stroke-width='4.5' stroke-linecap='round'/></svg>">
 <meta property="og:title" content="كوكنت بيتش للعوائل — أفقٌ خاص لعائلتك">
 <meta property="og:description" content="ملاذ عائلي على شاطئ البحر الأحمر في درة العروس. شاطئ خاص، مسابح، وشاليهات بإطلالة بحرية.">
 <meta property="og:image" content="https://images.pexels.com/photos/12858509/pexels-photo-12858509.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://abdullahtash.github.io/coconut-beach/">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:locale:alternate" content="en_US">
 
 <!-- ============================================================
   CoConut Beach للعوائل — luxury edition
@@ -22,6 +35,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script>document.documentElement.classList.add('js')</script>
 
 <style>
 /* ---------------- Tokens: Red Sea, after dark ---------------- */
@@ -65,7 +80,8 @@ h1 em .ar,h2 em .ar{font-style:normal;font-family:"Amiri",serif}
   letter-spacing:.38em;text-transform:uppercase;color:var(--gold);
   display:block;margin-bottom:1.1rem;
 }
-html[dir="rtl"] .eyebrow{letter-spacing:.28em}
+/* Arabic is cursive — any tracking pulls the joining strokes apart. */
+html[dir="rtl"] .eyebrow{letter-spacing:normal}
 .rule{width:56px;height:1px;background:var(--gold);position:relative;margin-block:1.3rem}
 .rule::after{content:"";position:absolute;inset-inline-end:-4px;top:-3px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
 .lead{color:var(--mist);font-weight:300;font-size:1.06rem;max-width:36rem}
@@ -79,6 +95,10 @@ html[dir="rtl"] .eyebrow{letter-spacing:.28em}
   cursor:pointer;transition:all .22s ease;white-space:nowrap;
 }
 .btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+/* Same ring for everything that isn't a .btn — nav, gallery tiles, footer links.
+   The UA default is too low-contrast against this dark ground. */
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.on-cream a:focus-visible,.on-cream button:focus-visible{outline-color:#8a6a2e}
 .btn svg{width:19px;height:19px;flex:0 0 auto}
 .btn-wa{background:var(--wa);color:#fff}
 .btn-wa:hover{background:#178f50;transform:translateY(-1px)}
@@ -101,6 +121,8 @@ header.scrolled{background:rgba(12,29,27,.92);backdrop-filter:blur(12px);border-
 .brand .name{font-family:var(--serif);font-weight:600;font-size:1.35rem;letter-spacing:.04em}
 .brand .name i{font-style:italic;color:var(--gold-2)}
 .brand small{display:block;font-size:.66rem;letter-spacing:.3em;color:var(--mist-2);text-transform:uppercase}
+/* Four controls in the bar leaves no room for the caption on the narrowest phones. */
+@media(max-width:400px){.brand small{display:none}}
 .nav-links{display:flex;gap:1.8rem;margin-inline-start:auto;font-size:.88rem;font-weight:500}
 .nav-links a{color:var(--mist);position:relative;padding-block:.2rem}
 .nav-links a::after{content:"";position:absolute;bottom:0;inset-inline-start:0;width:0;height:1px;background:var(--gold);transition:width .25s ease}
@@ -115,7 +137,59 @@ header.scrolled{background:rgba(12,29,27,.92);backdrop-filter:blur(12px);border-
 }
 .lang-btn:hover{border-color:var(--gold);color:var(--gold-2)}
 .nav .btn{padding:.55rem 1.3rem;font-size:.85rem}
-@media(max-width:900px){.nav-links{display:none}}
+
+/* ---------------- Mobile drawer ---------------- */
+.nav-toggle,.nav-scrim{display:none}
+@media(max-width:900px){
+  html.nav-open,html.nav-open body{overflow:hidden}
+
+  .nav-toggle{
+    display:inline-flex;align-items:center;justify-content:center;
+    position:relative;flex:0 0 auto;width:36px;height:32px;
+    border:1px solid rgba(245,240,230,.45);border-radius:2px;
+    background:transparent;color:var(--cream);cursor:pointer;
+    transition:border-color .2s ease,color .2s ease;
+  }
+  /* Widens the tap target to ~44px without changing the button's footprint. */
+  .nav-toggle::after{content:"";position:absolute;inset:-6px}
+  .nav-toggle:hover{border-color:var(--gold);color:var(--gold-2)}
+  .nav-toggle svg{width:17px;height:17px}
+  .nav-toggle .icon-close{display:none}
+  html.nav-open .nav-toggle .icon-open{display:none}
+  html.nav-open .nav-toggle .icon-close{display:block}
+
+  /* Below the header (z-80) so the bar stays lit and tappable, above the FAB
+     and bottom bar (both z-70) so they dim and stop accepting taps. */
+  .nav-scrim{
+    display:block;position:fixed;inset:0;z-index:75;
+    background:rgba(8,18,17,.6);
+    opacity:0;visibility:hidden;
+    transition:opacity .3s ease,visibility .3s ease;
+  }
+  html.nav-open .nav-scrim{opacity:1;visibility:visible}
+
+  /* The desktop nav becomes the drawer, so the five links live in one place. */
+  .nav-links{
+    display:flex;flex-direction:column;gap:0;
+    position:fixed;inset-block:0;inset-inline-end:0;z-index:90;
+    width:min(290px,80%);margin-inline-start:0;
+    padding:5.6rem 1.9rem 2rem;
+    background:rgba(12,29,27,.98);backdrop-filter:blur(12px);
+    border-inline-start:1px solid var(--hair);
+    box-shadow:0 0 60px rgba(0,0,0,.5);
+    font-size:1rem;overflow-y:auto;
+    transform:translateX(100%);visibility:hidden;
+    transition:transform .32s ease,visibility .32s ease;
+  }
+  html[dir="rtl"] .nav-links{transform:translateX(-100%)}
+  html.nav-open .nav-links{transform:none;visibility:visible}
+
+  /* Hairline rows, matching the facts bar and amenities grid. */
+  .nav-links a{padding-block:1.05rem;border-bottom:1px solid var(--hair)}
+  .nav-links a:first-child{border-top:1px solid var(--hair)}
+  .nav-links a::after{display:none}
+  .nav-links a:hover{color:var(--gold-2)}
+}
 
 /* ---------------- Hero ---------------- */
 .hero{
@@ -185,6 +259,8 @@ header.scrolled{background:rgba(12,29,27,.92);backdrop-filter:blur(12px);border-
 
 /* ---------------- Sections ---------------- */
 section{padding-block:6rem}
+/* Clears the fixed header so anchor links don't land underneath it. */
+section[id]{scroll-margin-top:90px}
 @media(max-width:700px){section{padding-block:4.2rem}}
 .on-cream{background:var(--cream);color:var(--ink-on-cream)}
 
@@ -229,10 +305,14 @@ section{padding-block:6rem}
 .amen small{font-size:.85rem;color:var(--sub-on-cream);font-weight:400}
 
 /* ---------------- Gallery mosaic ---------------- */
+/* Four across, single row. The source photos are only 1200x720, so no tile may
+   exceed that: at the 1160px wrap a quarter is ~281px, sharp even at 3x DPR.
+   grid-auto-rows is the guard against a 5th photo collapsing an implicit row. */
 .mosaic{
   display:grid;gap:12px;
   grid-template-columns:repeat(4,1fr);
-  grid-template-rows:280px 280px;
+  grid-template-rows:280px;
+  grid-auto-rows:280px;
 }
 .mosaic a{
   position:relative;overflow:hidden;border-radius:2px;display:block;
@@ -242,18 +322,15 @@ section{padding-block:6rem}
 .mosaic a::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,29,27,.35),transparent 45%);opacity:.7;transition:opacity .3s ease}
 .mosaic a:hover::after{opacity:.15}
 .mosaic a:hover{box-shadow:inset 0 0 0 1px var(--gold)}
-.mosaic .m1{grid-column:span 2;grid-row:span 2}
 @media(max-width:760px){
-  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:260px 180px 180px 180px}
-  .mosaic .m1{grid-column:span 2;grid-row:span 1}
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,180px);grid-auto-rows:180px}
 }
-/* PHOTO: gallery — six of the resort's listing photos */
+/* PHOTO: gallery — four of the resort's listing photos.
+   Class number tracks the photo index, so m1..m4 map to -1..-4.jpg. */
 .mosaic .m1{background-image:url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-1.jpg"),linear-gradient(150deg,#1A4A42,#0C1D1B)}
 .mosaic .m2{background-image:url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-2.jpg"),linear-gradient(150deg,#14776A,#0C1D1B)}
-.mosaic .m3{background-image:url("https://imgservice.clocktowerhotels.com/jpg/1280x720/AzRT8xsWDLcQL9frPSuXFfBPP68gnzkfmgGPsxCmnowuVp_VK83QtIkP7Bd-6IIMwiROqBnfn2biqPkJ6G3uzMaxPLg0jetavFHnocDL7Ny8PVPX1Wn4ZMiF3Okb1NnxLT2U9uZ1raxiHIlEHxnmfFnv9jEBDQpptAzCnV9SwzI2UOJ3Td1_eU2xo2rCBkZ7?property_id=BC-14550364&IgnoreDemoImage=true"),linear-gradient(150deg,#C98F3F,#6E441F)}
-.mosaic .m4{background-image:url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-3.jpg"),linear-gradient(150deg,#2FA893,#0A4C45)}
-.mosaic .m5{background-image:url("https://imgservice.clocktowerhotels.com/jpg/1280x720/AzRT8xsWDLcQL9frPSuXFfBPP68gnzkfmgGPsxCmnowuVp_VK83QtIkP7Bd-6IIMwiROqBnfn2biqPgB6G3uzBeOopqjOkzq_dg1x658-aN_UsRSgTdW3TVTRNi0xf8zdWh9Il2FLee5KRSQTBHEsIKyOVTz8p1ErCMJmJ1X5RIK4mkZLs6mDn4LmXYl5_rL?property_id=BC-14550364&IgnoreDemoImage=true"),linear-gradient(150deg,#1A4A42,#123029)}
-.mosaic .m6{background-image:url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-4.jpg"),linear-gradient(150deg,#E4693F,#4A1E33)}
+.mosaic .m3{background-image:url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-3.jpg"),linear-gradient(150deg,#2FA893,#0A4C45)}
+.mosaic .m4{background-image:url("https://imgservice.clocktowerhotels.com/1200x720/coconut-beach-for-family-sa-jeddah-bc-14550364-4.jpg"),linear-gradient(150deg,#E4693F,#4A1E33)}
 .gal-note{margin-top:1.4rem;font-size:.85rem;color:var(--mist-2);font-weight:300}
 .gal-note a{color:var(--gold-2);border-bottom:1px solid var(--hair)}
 
@@ -342,7 +419,8 @@ footer.site .wrap{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:space-b
 footer.site .f-brand{font-family:var(--serif);font-size:1.15rem;color:var(--cream)}
 footer.site nav{display:flex;gap:1.6rem;flex-wrap:wrap}
 footer.site a:hover{color:var(--gold-2)}
-footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
+/* The .75 opacity dropped this to ~3.6:1 at 12px. --mist-2 alone is ~5.4:1. */
+footer.site .note{width:100%;font-size:.75rem;font-weight:300}
 
 /* ---------------- FAB + mobile bar ---------------- */
 .fab{
@@ -365,17 +443,61 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
     padding:.65rem .8rem calc(.65rem + env(safe-area-inset-bottom));
   }
   .mobile-bar .btn{width:100%;padding:.8rem;font-size:.9rem}
-  body{padding-bottom:76px}
+  /* Must track the bar's own safe-area padding, or the footer hides behind it. */
+  body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
 }
 
 /* ---------------- Reveal ---------------- */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease}
-.reveal.in{opacity:1;transform:none}
+/* Gated on html.js: without the script that reveals them again, every section
+   below the facts bar would stay permanently invisible. */
+.reveal{transition:opacity .8s ease, transform .8s ease}
+html.js .reveal{opacity:0;transform:translateY(18px)}
+html.js .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto}
-  .reveal{opacity:1;transform:none}
+  html.js .reveal,html.js .reveal.in{opacity:1;transform:none}
   .final{background-attachment:scroll}
 }
+
+/* ---------------- Arabic typography ----------------
+   Applies only while the page is in Arabic, so the Latin styling is untouched. */
+
+/* Cursive script: tracking separates letters that should join. */
+html:not(.en) .brand small,
+html:not(.en) .scroll-cue,
+html:not(.en) .loc-tag,
+html:not(.en) .fact span,
+html:not(.en) blockquote footer{letter-spacing:normal}
+
+/* Arabic has no italic. Cormorant carries no Arabic glyphs, so these fell
+   through to a mechanically slanted Amiri — the colour alone carries the accent. */
+html:not(.en) .brand .name i,
+html:not(.en) footer.site .f-brand i{font-style:normal}
+
+/* Amiri ships 400 and 700 only, so the hero's 500 snapped down to regular while
+   every section heading's 600 snapped up to bold. Unify on bold; size carries
+   the hierarchy. .amen b and .fact b are serif display too, so they join the
+   rule — both already resolved to 700, this just states it. */
+html:not(.en) h1,
+html:not(.en) h2,
+html:not(.en) h3,
+html:not(.en) .hero h1,
+html:not(.en) .final h2,
+html:not(.en) .step h3,
+html:not(.en) .amen b,
+html:not(.en) .fact b{font-weight:700}
+
+/* Amiri's tall ascenders and above-line diacritics crowd at the Latin 1.18. */
+html:not(.en) h1,
+html:not(.en) h2,
+html:not(.en) h3{line-height:1.4}
+
+/* 300 is too thin for Arabic reversed out of a dark ground. */
+html:not(.en) .lead,
+html:not(.en) .stay-list li,
+html:not(.en) .step p,
+html:not(.en) .gal-note,
+html:not(.en) footer.site .note{font-weight:400}
 </style>
 
 <script type="application/ld+json">
@@ -411,7 +533,7 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
       <span class="name"><span class="ar">كوكنت <i>بيتش</i></span><span class="en">CoConut <i>Beach</i></span></span>
       <small><span class="ar">للعوائل · درة العروس</span><span class="en">Families only · Durrat Al-Arous</span></small>
     </a>
-    <nav class="nav-links" aria-label="sections">
+    <nav class="nav-links" id="navLinks" aria-label="التنقل بين الأقسام" data-label-ar="التنقل بين الأقسام" data-label-en="Section navigation">
       <a href="#stay"><span class="ar">الإقامة</span><span class="en">The stay</span></a>
       <a href="#amenities"><span class="ar">المرافق</span><span class="en">Amenities</span></a>
       <a href="#gallery"><span class="ar">المعرض</span><span class="en">Gallery</span></a>
@@ -419,15 +541,20 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
       <a href="#location"><span class="ar">الموقع</span><span class="en">Location</span></a>
     </nav>
     <div class="nav-cta">
-      <button class="lang-btn" id="langToggle" aria-label="Switch language">
+      <button class="lang-btn" id="langToggle" aria-label="التبديل إلى الإنجليزية" data-label-ar="التبديل إلى الإنجليزية" data-label-en="Switch to Arabic">
         <span class="ar">EN</span><span class="en">عربي</span>
       </button>
       <a class="btn btn-gold wa-link" href="https://wa.me/966530088622">
         <span class="ar">احجز الآن</span><span class="en">Book now</span>
       </a>
+      <button class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false" aria-label="القائمة" data-label-ar="القائمة" data-label-en="Menu">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6L18 18M18 6L6 18"/></svg>
+      </button>
     </div>
   </div>
 </header>
+<div class="nav-scrim" id="navScrim"></div>
 
 <main id="top">
 
@@ -458,7 +585,7 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
         <span class="ar">استفسر واحجز عبر واتساب</span><span class="en">Enquire &amp; book on WhatsApp</span>
       </a>
       <a class="btn btn-line" href="tel:+966530088622">
-        <span class="ar">اتصال&nbsp;&nbsp;8622 008 053</span><span class="en">Call&nbsp;&nbsp;053 008 8622</span>
+        <span class="ar">اتصال&nbsp;&nbsp;<span dir="ltr">053 008 8622</span></span><span class="en">Call&nbsp;&nbsp;053 008 8622</span>
       </a>
     </div>
   </div>
@@ -478,7 +605,7 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
 <!-- ================= THE STAY ================= -->
 <section id="stay">
   <div class="wrap split">
-    <div class="photo-frame stay-photo reveal" role="img" aria-label="شاليه كوكنت بيتش من الداخل"></div>
+    <div class="photo-frame stay-photo reveal" role="img" aria-label="شاليه كوكنت بيتش من الداخل" data-label-ar="شاليه كوكنت بيتش من الداخل" data-label-en="Inside a CoConut Beach chalet"></div>
     <div class="reveal">
       <span class="eyebrow"><span class="ar">الإقامة</span><span class="en">The stay</span></span>
       <h2><span class="ar">شاليهات صُمّمت <em><span class="ar">للسكينة</span></em></span><span class="en">Chalets designed <em>for stillness</em></span></h2>
@@ -527,13 +654,11 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
       <h2><span class="ar">لمحات من <em><span class="ar">المكان</span></em></span><span class="en">Glimpses of <em>the place</em></span></h2>
       <div class="rule"></div>
     </div>
-    <div class="mosaic reveal" aria-label="صور المنتجع">
-      <a class="m1" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
-      <a class="m2" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
-      <a class="m3" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
-      <a class="m4" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
-      <a class="m5" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
-      <a class="m6" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صور المنتجع"></a>
+    <div class="mosaic reveal" role="group" aria-label="صور المنتجع" data-label-ar="صور المنتجع" data-label-en="Resort photos">
+      <a class="m1" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صورة 1 من المنتجع على خرائط Google" data-label-ar="صورة 1 من المنتجع على خرائط Google" data-label-en="Resort photo 1 on Google Maps"></a>
+      <a class="m2" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صورة 2 من المنتجع على خرائط Google" data-label-ar="صورة 2 من المنتجع على خرائط Google" data-label-en="Resort photo 2 on Google Maps"></a>
+      <a class="m3" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صورة 3 من المنتجع على خرائط Google" data-label-ar="صورة 3 من المنتجع على خرائط Google" data-label-en="Resort photo 3 on Google Maps"></a>
+      <a class="m4" href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener" aria-label="صورة 4 من المنتجع على خرائط Google" data-label-ar="صورة 4 من المنتجع على خرائط Google" data-label-en="Resort photo 4 on Google Maps"></a>
     </div>
     <p class="gal-note">
       <span class="ar">المزيد من صور الزوار على <a href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener">خرائط Google</a>.</span>
@@ -643,7 +768,7 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
         <a class="btn btn-wa wa-link" href="https://wa.me/966530088622"><span class="ar">اسألونا عن الموقع</span><span class="en">Ask us anything</span></a>
       </div>
     </div>
-    <div class="photo-frame loc-photo reveal">
+    <div class="photo-frame loc-photo reveal" role="img" aria-label="محيط المنتجع في درة العروس" data-label-ar="محيط المنتجع في درة العروس" data-label-en="The resort's surroundings in Durrat Al-Arous">
       <div class="loc-tag"><span class="ar">درة العروس · جدة</span><span class="en">Durrat Al-Arous · Jeddah</span></div>
     </div>
   </div>
@@ -674,8 +799,8 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
       <a href="https://www.google.com/maps/search/?api=1&query=CoConut+Beach+%D8%AF%D8%B1%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3" target="_blank" rel="noopener"><span class="ar">خرائط Google</span><span class="en">Google Maps</span></a>
     </nav>
     <span class="note">
-      <span class="ar">© 2026 كوكنت بيتش للعوائل — درة العروس، جدة. *الإلغاء المجاني وفق سياسة الحجز المعلنة. صور المعرض من قوائم المنتجع على منصات الحجز؛ صورتا الغلاف مؤقتتان لحين اعتماد الصور الأصلية.</span>
-      <span class="en">© 2026 CoConut Beach For Families — Durrat Al-Arous, Jeddah. *Free cancellation per the published booking policy. Gallery photos from the resort's booking listings; the two cover images are temporary pending the resort's originals.</span>
+      <span class="ar">© 2026 كوكنت بيتش للعوائل — درة العروس، جدة. *الإلغاء المجاني وفق سياسة الحجز المعلنة. صور المعرض من قوائم المنتجع على منصات الحجز.</span>
+      <span class="en">© 2026 CoConut Beach For Families — Durrat Al-Arous, Jeddah. *Free cancellation per the published booking policy. Gallery photos from the resort's booking listings.</span>
     </span>
   </div>
 </footer>
@@ -707,6 +832,24 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
   }
   setWaText();
 
+  // aria-labels have no .ar/.en spans to hide, so they have to be swapped here.
+  function setLabels(){
+    var lang = document.documentElement.classList.contains('en') ? 'en' : 'ar';
+    var els = document.querySelectorAll('[data-label-' + lang + ']');
+    for(var i=0;i<els.length;i++){
+      els[i].setAttribute('aria-label', els[i].getAttribute('data-label-' + lang));
+    }
+  }
+  setLabels();
+
+  // The document lang only ever describes one of the two versions in the markup.
+  function tagLang(sel, code){
+    var els = document.querySelectorAll(sel);
+    for(var i=0;i<els.length;i++){ els[i].setAttribute('lang', code); }
+  }
+  tagLang('.ar','ar');
+  tagLang('.en','en');
+
   var btn = document.getElementById('langToggle');
   if(btn){
     btn.addEventListener('click', function(){
@@ -716,8 +859,37 @@ footer.site .note{width:100%;font-size:.75rem;font-weight:300;opacity:.75}
       root.setAttribute('lang', toEn ? 'en' : 'ar');
       root.setAttribute('dir', toEn ? 'ltr' : 'rtl');
       setWaText();
+      setLabels();
     });
   }
+
+  var navToggle = document.getElementById('navToggle');
+  var navScrim  = document.getElementById('navScrim');
+  var navPanel  = document.getElementById('navLinks');
+
+  function setNav(open){
+    document.documentElement.classList.toggle('nav-open', open);
+    if(navToggle){ navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  }
+  if(navToggle){
+    navToggle.addEventListener('click', function(){
+      setNav(!document.documentElement.classList.contains('nav-open'));
+    });
+  }
+  if(navScrim){ navScrim.addEventListener('click', function(){ setNav(false); }); }
+  if(navPanel){
+    // Close on link tap, so the anchor scroll lands on an unobstructed page.
+    navPanel.addEventListener('click', function(e){
+      if(e.target.closest('a')){ setNav(false); }
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ setNav(false); }
+  });
+  // Past the breakpoint the panel is a plain row again — don't leave it open.
+  window.addEventListener('resize', function(){
+    if(window.innerWidth > 900){ setNav(false); }
+  }, {passive:true});
 
   var hdr = document.getElementById('hdr');
   function onScroll(){ hdr.classList.toggle('scrolled', window.scrollY > 40); }
