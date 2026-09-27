@@ -153,8 +153,8 @@ const CONFIG = {
   SALON_NAME: "مركز لا لونا للسيدات",
   RESPONSES_EMAIL: "",
   BRANCHES: {
-    abhur:  { name: "فرع أبحر",   review: "https://search.google.com/local/writereview?placeid=ChIJTwjWZM5jwRURq0xuBJEvg7k" },
-    rawdah: { name: "فرع الروضة", review: "https://search.google.com/local/writereview?placeid=ChIJ7fBbGgDbwxURrzvR2Wa3M1w" }
+    abhur:  { name: "فرع أبحر",   email: "lalunasaloon@gmail.com", review: "https://search.google.com/local/writereview?placeid=ChIJTwjWZM5jwRURq0xuBJEvg7k" },
+    rawdah: { name: "فرع الروضة", email: "laluna12003@yahoo.com", review: "https://search.google.com/local/writereview?placeid=ChIJ7fBbGgDbwxURrzvR2Wa3M1w" }
   }
 };
 /* ============================================= */
@@ -206,9 +206,10 @@ document.querySelectorAll(".face").forEach(btn => btn.addEventListener("click", 
 }));
 
 function sendPrivate(){
-  if (state.sent || !CONFIG.RESPONSES_EMAIL) return;
-  state.sent = true;
   const b = CONFIG.BRANCHES[state.branch];
+  const email = b.email || CONFIG.RESPONSES_EMAIL;
+  if (state.sent || !email) return;
+  state.sent = true;
   const payload = {
     _subject: "تقييم جديد · " + b.name,
     _template: "table",
@@ -218,7 +219,7 @@ function sendPrivate(){
     "الوقت": new Date().toLocaleString("ar-SA")
   };
   try {
-    fetch("https://formsubmit.co/ajax/" + encodeURIComponent(CONFIG.RESPONSES_EMAIL), {
+    fetch("https://formsubmit.co/ajax/" + encodeURIComponent(email), {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify(payload),
